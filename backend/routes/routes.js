@@ -7,7 +7,10 @@ const ProdutosController = require('../controllers/ProdutosController');
 // const SessionController = require('./controllers/SessionController')
 
 const routes = express.Router();
-routes.get('/produtos',ProdutosController.index);
+routes.get('/produtos',ProdutosController.getProducts);
+routes.post('/produtos',ProdutosController.store);
+routes.put('/produtos',ProdutosController.update);
+routes.delete('/produtos',ProdutosController.delete);
    
 
 routes.get('/', function(req, res) {

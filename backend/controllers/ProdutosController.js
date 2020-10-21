@@ -3,7 +3,7 @@ const crypto  = require('crypto');
 
 module.exports = {
     
-    async index(request, response){
+    async getProducts(request, response){
         // #swagger.tags = ['User']
         // #swagger.description = 'Endpoint para obter um usuário.'
         
@@ -13,7 +13,40 @@ module.exports = {
         return response.json(ongs);
     },
 
-    async create(request, response) {
+    async store(request, response) {
+        // const {nome, descricao, imagem, valor} = request.body;
+    
+        // const id = crypto.randomBytes(4).toString('HEX');
+    
+        // await connection('ongs').insert({
+        //     id,
+        //     name,
+        //     email,
+        //     whatsapp,
+        //     city,
+        //     uf
+        // });
+    
+        // return response.json({ id });
+    },
+
+    async update(request, response) {
+        // const {name, email, whatsapp, city, uf} = request.body;
+    
+        // const id = crypto.randomBytes(4).toString('HEX');
+    
+        // await connection('ongs').insert({
+        //     id,
+        //     name,
+        //     email,
+        //     whatsapp,
+        //     city,
+        //     uf
+        // });
+    
+        // return response.json({ id });
+    },
+    async delete(request, response) {
         // const {name, email, whatsapp, city, uf} = request.body;
     
         // const id = crypto.randomBytes(4).toString('HEX');
