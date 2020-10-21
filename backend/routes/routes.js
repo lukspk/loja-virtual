@@ -1,4 +1,5 @@
 const express = require('express');
+const ProdutosController = require('../controllers/ProdutosController');
 
 // const OngController = require('./controllers/OngController');
 // const IncidentsController = require('./controllers/IncidentController');
@@ -6,16 +7,45 @@ const express = require('express');
 // const SessionController = require('./controllers/SessionController')
 
 const routes = express.Router();
+routes.get('/produtos',ProdutosController.index);
+   
 
-routes.get('/ongs', OngController.index);
-routes.post('/ongs', OngController.create);
+routes.get('/', function(req, res) {
+     // #swagger.tags = ['User']
+        // #swagger.description = 'Endpoint para obter um usuário.'
+        // #swagger.parameters['id'] = { description: 'ID do usuário.' }
+    res.send('hello world');
+  });
+routes.get('/users/:id', (req, res) => {
+	      // #swagger.tags = ['User']
+        // #swagger.description = 'Endpoint para obter um usuário.'
+        // #swagger.parameters['id'] = { description: 'ID do usuário.' }
 
-routes.post('/incidents', IncidentsController.create);
-routes.get('/incidents', IncidentsController.index);
-routes.delete('/incidents/:id',IncidentsController.delete);
+        /* #swagger.parameters['filtro'] = {
+               description: 'Um filtro qualquer.',
+               type: 'string'
+        } */
+	const filtro = req.query.filtro
 
-routes.get('/profile', ProfileController.index);
+        return res.status(404).send(false)
 
-routes.post('/sessions', SessionController.create);
+    })
+    routes.get('/teste/:id', (req, res) => {
+	    
+        const filtro = req.query.filtro
+    
+            return res.status(404).send(false)
+    
+        })
+// routes.get('/ongs', OngController.index);
+// routes.post('/ongs', OngController.create);
+
+// routes.post('/incidents', IncidentsController.create);
+// routes.get('/incidents', IncidentsController.index);
+// routes.delete('/incidents/:id',IncidentsController.delete);
+
+// routes.get('/profile', ProfileController.index);
+
+// routes.post('/sessions', SessionController.create);
 
 module.exports = routes;
