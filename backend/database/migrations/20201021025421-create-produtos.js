@@ -12,7 +12,7 @@ module.exports = {
     return queryInterface.sequelize.query('CREATE EXTENSION IF NOT EXISTS "uuid-ossp";')
     .then(() => {
       return queryInterface.createTable('produtos', {
-        id: {
+        uuid: {
           allowNull: false,
           primaryKey: true,
           type: Sequelize.UUID,
