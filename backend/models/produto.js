@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-    const Produto = sequelize.define('User', {
+    const Produto = sequelize.define('Produto', {
         id: DataTypes.UUID,
         nome: DataTypes.STRING,
         descricao: DataTypes.STRING,
@@ -9,5 +9,5 @@ module.exports = (sequelize, DataTypes) => {
         updatedAt: DataTypes.DATE,
     });
   
-    return User;
+    return Produto;
   }
