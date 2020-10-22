@@ -20,27 +20,27 @@ module.exports = {
         },
         nome: {
           allowNull: false,
-          type: DataTypes.STRING,
+          type: Sequelize.STRING,
         },
         descricao: {
           allowNull: false,
-          type: DataTypes.STRING,
+          type: Sequelize.STRING,
         },
         imagem: {
           allowNull: false,
-          type: DataTypes.STRING,
+          type: Sequelize.STRING,
         },
         valor: {
           allowNull: false,
-          type: DataTypes.DOUBLE,
+          type: Sequelize.DOUBLE,
         },
         createdAt: {
           allowNull: false,
-          type: DataTypes.DATE,
+          type: Sequelize.DATE,
         },
         updatedAt: {
           allowNull: false,
-          type: DataTypes.DATE,
+          type: Sequelize.DATE,
         },
       });
     })
