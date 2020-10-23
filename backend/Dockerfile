@@ -1,15 +1,12 @@
 ### STAGE 1: Build ###
-FROM node:12.7-alpine AS build
-WORKDIR /usr/src/app
-COPY package.json ./
+FROM node:12.7-alpine 
+WORKDIR /usr/app
+COPY package*.json ./
 RUN npm install
 RUN npm install nodemon
 COPY . .
 # RUN npm start
+EXPOSE 8080
+
 CMD [ "npm", "start" ]
 
-### STAGE 2: Run ###
-# FROM nginx:1.17.1-alpine
-# COPY default.conf /etc/nginx/conf.d/default.conf
-# COPY --from=build /usr/src/app/dist/frontend /usr/share/nginx/html
-EXPOSE 8080

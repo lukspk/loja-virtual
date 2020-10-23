@@ -25,6 +25,6 @@ module.exports = {
   username: 'default',
   password: 'secret',
   database: 'loja',
-  host: '0.0.0.0',
+  host: 'loja-postgres',
   dialect: 'postgres',
 }

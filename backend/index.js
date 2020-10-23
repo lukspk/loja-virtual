@@ -8,7 +8,7 @@ const swaggerFile = require('./swagger_output.json')
 app.use(cors());
 
 
-app.listen(port, () => {
+app.listen(port,'0.0.0.0', () => {
   console.log(`Servidor rodando na porta ${port}`)
 });
 
