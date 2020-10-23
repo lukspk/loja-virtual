@@ -29,7 +29,7 @@ $ createdb -U default loja
 $ exit
 
 # Execute o comando
-$ cd backend && npx sequelize db:migrate && cd config && nano database.js
+$ cd backend && npm install --save-dev sequelize-cli && npx sequelize db:migrate && cd config && nano database.js
 
 # Troque o host de '127.0.0.1' para 'loja-postgres'
 $ Ctrl + O e Ctrl + X para salvar e sair
