@@ -2,10 +2,10 @@
   "swagger": "2.0",
   "info": {
     "version": "1.0.0",
-    "title": "REST API",
-    "description": ""
+    "title": "REST API PRODUTOS",
+    "description": "Api para manter dados de produtos"
   },
-  "host": "localhost:3000",
+  "host": "localhost:8080",
   "basePath": "/",
   "tags": [],
   "schemes": [
@@ -17,27 +17,53 @@
   "paths": {
     "/produtos": {
       "get": {
-        "tags": [],
-        "description": "",
+        "tags": ["Produtos"],
+        "description": "Endpoins responsável pela busca da listagem de produtos.",
         "parameters": [],
         "responses": {}
       },
       "post": {
-        "tags": [],
-        "description": "",
+        "tags": ["Produtos"],
+        "description": "Endpoins responsável por salvar novos produtos no banco de dados.",
         "parameters": [],
+        "responses": {}
+      }
+    },
+    "/produtos/{uuid}": {
+      "get": {
+        "tags": ["Produtos"],
+        "description": "Endpoint Responsável pela busca de apenas um produto para função de editar.",
+        "parameters": [
+          {
+            "name": "uuid",
+            "in": "path",
+            "required": true
+          }
+        ],
         "responses": {}
       },
       "put": {
-        "tags": [],
-        "description": "",
-        "parameters": [],
+        "tags": ["Produtos"],
+        "description": "Endpoint responsável por fazer atualização dos dados de Produto",
+        "parameters": [
+          {
+            "name": "uuid",
+            "in": "path",
+            "required": true
+          }
+        ],
         "responses": {}
       },
       "delete": {
-        "tags": [],
-        "description": "",
-        "parameters": [],
+        "tags": ["Produtos"],
+        "description": "Endpoint reponsável por realizar a exclusão de um produto",
+        "parameters": [
+          {
+            "name": "uuid",
+            "in": "path",
+            "required": true
+          }
+        ],
         "responses": {}
       }
     }
