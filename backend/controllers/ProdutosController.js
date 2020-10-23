@@ -77,12 +77,27 @@ module.exports = {
         // return response.json({ id });
     },
     async delete(request, response) {
-        const {uuid} = request.body;
+
+      const { uuid } = request.params;
+        // const ong_id = request.headers.authorization;
+
+        // const incident = await connection('incidents').where('id', id).select('ong_id').first();
+
+        // if (incident.ong_id != ong_id) {
+        //     return response.status(401).json({ error: 'Operation not permitted' }) ;
+        // }
+
+        // await connection('incidents').where('id', id).delete();
+
+        
+
+        // const {uuid} = request.body;
         await Produto.destroy({
             where: {
               uuid: uuid
             }
           });
+          return response.status(204).send();
         // const {name, email, whatsapp, city, uf} = request.body;
     
         // const id = crypto.randomBytes(4).toString('HEX');

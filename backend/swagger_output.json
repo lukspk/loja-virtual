@@ -21,70 +21,24 @@
         "description": "",
         "parameters": [],
         "responses": {}
-      }
-    },
-    "/": {
-      "get": {
-        "tags": [
-          "User"
-        ],
-        "description": "Endpoint para obter um usuário.",
-        "parameters": [
-          {
-            "name": "id",
-            "description": "ID do usuário."
-          }
-        ],
-        "responses": {}
-      }
-    },
-    "/users/{id}": {
-      "get": {
-        "tags": [
-          "User"
-        ],
-        "description": "Endpoint para obter um usuário.",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "description": "ID do usuário."
-          },
-          {
-            "name": "filtro",
-            "description": "Um filtro qualquer.",
-            "type": "string",
-            "in": "query"
-          }
-        ],
-        "responses": {
-          "404": {
-            "description": "Not Found"
-          }
-        }
-      }
-    },
-    "/teste/{id}": {
-      "get": {
+      },
+      "post": {
         "tags": [],
         "description": "",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true
-          },
-          {
-            "name": "filtro",
-            "in": "query"
-          }
-        ],
-        "responses": {
-          "404": {
-            "description": "Not Found"
-          }
-        }
+        "parameters": [],
+        "responses": {}
+      },
+      "put": {
+        "tags": [],
+        "description": "",
+        "parameters": [],
+        "responses": {}
+      },
+      "delete": {
+        "tags": [],
+        "description": "",
+        "parameters": [],
+        "responses": {}
       }
     }
   },

@@ -10,36 +10,36 @@ const routes = express.Router();
 routes.get('/produtos',ProdutosController.getProducts);
 routes.post('/produtos',ProdutosController.store);
 routes.put('/produtos',ProdutosController.update);
-routes.delete('/produtos',ProdutosController.delete);
+routes.delete('/produtos/:uuid',ProdutosController.delete);
    
 
-routes.get('/', function(req, res) {
-     // #swagger.tags = ['User']
-        // #swagger.description = 'Endpoint para obter um usuário.'
-        // #swagger.parameters['id'] = { description: 'ID do usuário.' }
-    res.send('hello world');
-  });
-routes.get('/users/:id', (req, res) => {
-	      // #swagger.tags = ['User']
-        // #swagger.description = 'Endpoint para obter um usuário.'
-        // #swagger.parameters['id'] = { description: 'ID do usuário.' }
+// routes.get('/', function(req, res) {
+//      // #swagger.tags = ['User']
+//         // #swagger.description = 'Endpoint para obter um usuário.'
+//         // #swagger.parameters['id'] = { description: 'ID do usuário.' }
+//     res.send('hello world');
+//   });
+// routes.get('/users/:id', (req, res) => {
+// 	      // #swagger.tags = ['User']
+//         // #swagger.description = 'Endpoint para obter um usuário.'
+//         // #swagger.parameters['id'] = { description: 'ID do usuário.' }
 
-        /* #swagger.parameters['filtro'] = {
-               description: 'Um filtro qualquer.',
-               type: 'string'
-        } */
-	const filtro = req.query.filtro
+//         /* #swagger.parameters['filtro'] = {
+//                description: 'Um filtro qualquer.',
+//                type: 'string'
+//         } */
+// 	const filtro = req.query.filtro
 
-        return res.status(404).send(false)
+//         return res.status(404).send(false)
 
-    })
-    routes.get('/teste/:id', (req, res) => {
+//     })
+//     routes.get('/teste/:id', (req, res) => {
 	    
-        const filtro = req.query.filtro
+//         const filtro = req.query.filtro
     
-            return res.status(404).send(false)
+//             return res.status(404).send(false)
     
-        })
+//         })
 // routes.get('/ongs', OngController.index);
 // routes.post('/ongs', OngController.create);
 

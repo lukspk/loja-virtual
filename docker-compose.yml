@@ -12,6 +12,8 @@ services:
         - POSTGRES_DB=loja_virtual
         - POSTGRES_USER=default
         - POSTGRES_PASSWORD=secret
+        networks:
+            - dev-network
 
     backend:
         build: ./backend
@@ -25,6 +27,8 @@ services:
             - 8080:8080
         links:
             - loja-postgres
+        networks:
+            - dev-network
 
     frontend:
         build: ./frontend
@@ -33,7 +37,12 @@ services:
             - 4200:80
         links:
             - backend
+        networks:
+            - dev-network
 
 
 volumes:
   loja-data:
+networks: 
+    dev-network:
+        driver: bridge
