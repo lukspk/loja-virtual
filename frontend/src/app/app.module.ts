@@ -7,8 +7,9 @@ import { AppComponent } from './app.component';
 import { VitrineComponent } from './vitrine/vitrine.component';
 import { RestritoComponent } from './restrito/restrito.component';
 import { RestritoProdutosComponent } from './restrito-produtos/restrito-produtos.component';
-import { RestritoLayoutComponent } from './restrito-layout/restrito-layout.component';
 import { RestritoDashboardComponent } from './restrito-dashboard/restrito-dashboard.component';
+import { RestritoProdutosFormComponent } from './restrito-produtos-form/restrito-produtos-form.component';
+import { FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,13 +17,14 @@ import { RestritoDashboardComponent } from './restrito-dashboard/restrito-dashbo
     VitrineComponent,
     RestritoComponent,
     RestritoProdutosComponent,
-    RestritoLayoutComponent,
-    RestritoDashboardComponent
+    RestritoDashboardComponent,
+    RestritoProdutosFormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

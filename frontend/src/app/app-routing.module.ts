@@ -1,3 +1,4 @@
+import { RestritoProdutosFormComponent } from './restrito-produtos-form/restrito-produtos-form.component';
 import { RestritoDashboardComponent } from './restrito-dashboard/restrito-dashboard.component';
 import { RestritoComponent } from './restrito/restrito.component';
 import { VitrineComponent } from './vitrine/vitrine.component';
@@ -13,6 +14,8 @@ const routes: Routes = [
     path: 'restrito', component: RestritoComponent,
     children : [
       {path : 'produtos', component: RestritoProdutosComponent},
+      {path : 'produtos/create', component: RestritoProdutosFormComponent},
+      {path : 'produtos/editar/:uuid', component: RestritoProdutosFormComponent},
       {path : '', component: RestritoDashboardComponent}
     ] 
   }

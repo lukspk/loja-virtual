@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import axios from 'axios';
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-restrito-produtos',
@@ -7,8 +8,9 @@ import axios from 'axios';
   styleUrls: ['./restrito-produtos.component.css']
 })
 export class RestritoProdutosComponent implements OnInit {
+  router: Router;
   produtos : [];
-  constructor() { }
+  constructor(router: Router) {this.router = router; }
 
   atualizaLista() : void {
     axios({
@@ -26,16 +28,22 @@ export class RestritoProdutosComponent implements OnInit {
    this.atualizaLista();
   }
 
+  redirectCadastrar() {
+    location.href = "http://localhost:4200/restrito/produtos/create";
+  }
+  
+  redirectEditar(uuid) : void {
+    location.href = `http://localhost:4200/restrito/produtos/editar/${uuid}`;
+  }
+
   public delete(uuid) : void {
-    console.log(uuid)
     axios({
       method: 'delete',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       url: `http://localhost:8080/produtos/${uuid}`,
     }).then( (response) => {
-      // console.log(response.data);
-      this.produtos = response.data;
-      console.log(this.produtos);
+      // this.produtos = response.data;
+
       this.produtos = [];
       this.atualizaLista();
     });

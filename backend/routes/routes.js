@@ -8,8 +8,9 @@ const ProdutosController = require('../controllers/ProdutosController');
 
 const routes = express.Router();
 routes.get('/produtos',ProdutosController.getProducts);
+routes.get('/produtos/:uuid',ProdutosController.editar);
 routes.post('/produtos',ProdutosController.store);
-routes.put('/produtos',ProdutosController.update);
+routes.put('/produtos/:uuid',ProdutosController.update);
 routes.delete('/produtos/:uuid',ProdutosController.delete);
    
 

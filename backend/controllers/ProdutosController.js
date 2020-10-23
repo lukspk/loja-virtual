@@ -16,12 +16,13 @@ module.exports = {
         // return response.json({id : 1, teste: 2});
         // const ongs = await connection('ongs').select('*');
         // Pro
+        
         const produto = await Produto.findAll();
         return response.json(produto);
     },
 
      async store(request, response) {
-        
+        console.log(request);
         const {nome, descricao, imagem, valor} = request.body;
             // console.log(nome);
         // const id = crypto.randomBytes(4).toString('HEX');
@@ -29,7 +30,7 @@ module.exports = {
 
         try {
             //listing messages in users mailbox 
-            //   let emailFetch = await gmaiLHelper.getEmails(req.user._doc.profile_id , '/messages', req.user.accessToken)
+            //   let emailFHGYIKetch = await gmaiLHelper.getEmails(req.user._doc.profile_id , '/messages', req.user.accessToken)
             //   emailFetch = emailFetch.data
             //   res.send(emailFetch)
 
@@ -53,28 +54,27 @@ module.exports = {
     
         // return response.json({ id });
     },
+    async editar(request, response) {
+      // console.log(request.params);
+      const {uuid} = request.params;
+      const produto = await Produto.findAll({
+        where: {
+          uuid: uuid
+        }
+      });
+      return response.json(produto);
+    },
 
     async update(request, response) {
-        await Produto.update({ lastName: "Doe" }, {
+      const { uuid } = request.params;
+      const {nome, descricao, imagem, valor} = request.body;
+        await Produto.update({ nome: nome, descricao : descricao, imagem : imagem, valor : valor }, {
             where: {
-              uuid: null
+              uuid: uuid
             }
           });
-
-        // const {name, email, whatsapp, city, uf} = request.body;
     
-        // const id = crypto.randomBytes(4).toString('HEX');
-    
-        // await connection('ongs').insert({
-        //     id,
-        //     name,
-        //     email,
-        //     whatsapp,
-        //     city,
-        //     uf
-        // });
-    
-        // return response.json({ id });
+        return response.json({ uuid });
     },
     async delete(request, response) {
 
